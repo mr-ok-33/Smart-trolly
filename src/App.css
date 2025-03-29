@@ -8,6 +8,8 @@ body {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   overflow-x: hidden;
+  text-align: center;
+  min-width: 100vh;
 }
 button {
   background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient effect */
@@ -42,7 +44,6 @@ button:active {
   top: 0;
   z-index: 1000;
   padding: 24px;
-  gap: 19rem;
   background-color: rgb(243, 237, 237);
   box-shadow: 0px 4px 10px rgba(145, 145, 145, 0.1);
 }
@@ -50,6 +51,7 @@ button:active {
   display: flex;
   align-items: center;
   gap: 10px;
+  /* background-color: red; */
 }
 .logo-container img {
   height: 40px;
@@ -81,6 +83,71 @@ button:active {
   text-decoration: underline;
   color: rgb(120, 9, 99);
 }
+.menu-icon{
+  display: none;
+}
+/* Responsive Styles */
+@media screen and (max-width: 300px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .right-side {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .right-side.open {
+    right: 0;
+  }
+
+  .right-side ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    /* background-color: red; */
+  }
+
+  .right-side ul li {
+    margin: 10px 0;
+  }
+
+  .right-side ul li a {
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .right-side ul li button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
 
 /* Hero Section */
 .hero-container {
@@ -111,6 +178,28 @@ button:active {
 .image img {
   height: 35rem;
   cursor: pointer;
+}
+@media (max-width: 300px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    height: auto;
+    padding: 20px;
+  }
+  .hero-container .text h1 {
+    font-size: 28px;
+  }
+  .hero-container .text h3 {
+    font-size: 18px;
+  }
+  .hero-container .text p {
+    font-size: 16px;
+  }
+  .image img {
+    height: 20rem;
+    width: 100%;
+  }
 }
 
 /* Feature Style */
@@ -167,6 +256,34 @@ button:active {
   /* margin-bottom: 20px; */
   transition: opacity 0.5 ease;
 }
+@media (max-width: 400px) {
+  .feature-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .card h1 {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .card h3 {
+    margin-top: 50px;
+    font-size: 18px;
+  }
+
+  .card:hover p {
+    margin-top: 30px;
+  }
+}
 
 /* Work Style */
 .work-container {
@@ -175,7 +292,7 @@ button:active {
   height: 650px;
   padding: 5px;
 }
-.work-container .heading-text h1{
+.work-container .heading-text h1 {
   color: rgb(220, 118, 2);
   margin: 15px;
   font-size: 40px;
@@ -198,7 +315,7 @@ button:active {
   transition: background-color 0.7s ease-in;
   background-color: rgb(248, 226, 226);
 }
-.work-container .heading-text h3{
+.work-container .heading-text h3 {
   color: black;
 }
 .work-card pre {
@@ -229,9 +346,52 @@ button:active {
   text-align: center;
   margin-bottom: 17px;
 }
+@media (max-width: 300px) {
+  .work-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .work-container .heading-text h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .work-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-card .card1 {
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .work-card .card1 img {
+    height: 200px;
+    width: 100%;
+  }
+
+  .work-card pre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-card pre h3 {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .work-card pre p {
+    font-size: 14px;
+    padding: 5%;
+  }
+}
 
 /* Reviews */
-.review-card{
+.review-card {
   display: flex;
 }
 .testimonial-card {
@@ -249,12 +409,12 @@ button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size:18px;
+  font-size: 18px;
   /* color: black; */
 }
 
 .stars {
-  color: #FFA500;
+  color: #ffa500;
 }
 
 .date {
@@ -291,33 +451,89 @@ button:active {
 }
 
 /* Contact button Style */
-.contact{
+.contact {
   margin-top: 50px;
 }
-.contact button{
+.contact button {
   padding: 20px;
   width: 700px;
   border-radius: 30px;
   font-size: 45px;
 }
+@media (max-width: 300px) {
+  .review-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .stars-date {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .testimonial-text {
+    margin: 40px 0;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .user-info img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-info h3 {
+    font-size: 16px;
+  }
+
+  .user-info p {
+    font-size: 13px;
+  }
+
+  .contact {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .contact button {
+    width: 90%;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+}
 
 /* Footer Style */
 
-.footer-container{
+.footer-container {
   background-color: rgb(214, 209, 209);
   height: 450px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  position:relative;
+  position: relative;
   bottom: 0;
   margin-top: 70px;
 }
-.footer-container img{
+.footer-container img {
   height: 40px;
 }
-.footer-container .logo-section p{
+.footer-container .logo-section p {
   height: 100px;
   width: 80px;
   display: flex;
@@ -327,7 +543,7 @@ button:active {
   top: 70px;
   margin-bottom: 40px;
 }
-.text-section{
+.text-section {
   position: relative;
   left: 120px;
   top: 40px;
@@ -338,32 +554,73 @@ button:active {
   font-size: 18px;
   list-style: none;
 }
-.text-section ul li{
+.text-section ul li {
   list-style: none;
 }
-.firstSection{
+.firstSection {
   text-align: center;
   line-height: 1.5;
 }
-.secondSection{
+.secondSection {
   text-align: center;
   line-height: 1.5;
 }
-.thirdSection p{
+.thirdSection p {
   text-align: start;
   position: relative;
   left: 20px;
   font-size: 24px;
 }
-.thirdSection .btn{
+.thirdSection .btn {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin: 20px;
-
 }
-.thirdSection .btn button{
+.thirdSection .btn button {
   padding: 13px;
   color: darkgreen;
   border-radius: 20px;
+}
+@media (max-width: 300px) {
+  .footer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-container img {
+    height: 30px;
+  }
+
+  .footer-container .logo-section p {
+    width: 100%;
+    height: auto;
+    top: 20px;
+    font-size: 14px;
+  }
+
+  .text-section {
+    flex-direction: column;
+    left: 0;
+    top: 20px;
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .thirdSection p {
+    font-size: 18px;
+    left: 0;
+  }
+
+  .thirdSection .btn {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .thirdSection .btn button {
+    width: 100%;
+    font-size: 14px;
+  }
 }

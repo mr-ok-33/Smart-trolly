@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
+import profileImg from '../../assets/ico-tag.svg';
 
 const Reviews = () => {
   return (
@@ -9,19 +10,16 @@ const Reviews = () => {
           <h1>Our Reviews</h1>
 
           <div className="review-card">
-            <div class="testimonial-card">
-              <div class="stars-date">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="date">10th Feb, 2023</div>
+            <div className="testimonial-card">
+              <div className="stars-date">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <div className="date">10th Feb, 2023</div>
               </div>
-              <p class="testimonial-text">
-                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do
-                Eiusmod Tempor Incididunt Ut Labore. Lorem Ipsum Dolor Sit Amet,
-                Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt
-                Ut Labore. Lorem Ipsum Dolor Sit Amet.
+              <p className="testimonial-text">
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore.
               </p>
-              <div class="user-info">
-                <img src="profile.png" alt="User Image" />
+              <div className="user-info">
+                <img src={profileImg} alt="User Image" />
                 <div>
                   <h3>Ray Robertson</h3>
                   <p>CEO Company</p>
@@ -29,60 +27,16 @@ const Reviews = () => {
               </div>
             </div>
 
-            <div class="testimonial-card">
-              <div class="stars-date">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="date">10th Feb, 2023</div>
+            <div className="testimonial-card">
+              <div className="stars-date">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <div className="date">10th Feb, 2023</div>
               </div>
-              <p class="testimonial-text">
-                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do
-                Eiusmod Tempor Incididunt Ut Labore. Lorem Ipsum Dolor Sit Amet,
-                Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt
-                Ut Labore. Lorem Ipsum Dolor Sit Amet.
+              <p className="testimonial-text">
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore.
               </p>
-              <div class="user-info">
-                <img src="profile.png" alt="User Image" />
-                <div>
-                  <h3>Ray Robertson</h3>
-                  <p>CEO Company</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="stars-date">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="date">10th Feb, 2023</div>
-              </div>
-              <p class="testimonial-text">
-                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do
-                Eiusmod Tempor Incididunt Ut Labore. Lorem Ipsum Dolor Sit Amet,
-                Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt
-                Ut Labore. Lorem Ipsum Dolor Sit Amet.
-              </p>
-              <div class="user-info">
-                <img src="profile.png" alt="User Image" />
-                <div>
-                  <h3>Ray Robertson</h3>
-                  <p>CEO Company</p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="testimonial-card">
-              <div class="stars-date">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="date">10th Feb, 2023</div>
-              </div>
-              <p class="testimonial-text">
-                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do
-                Eiusmod Tempor Incididunt Ut Labore. Lorem Ipsum Dolor Sit Amet,
-                Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt
-                Ut Labore. Lorem Ipsum Dolor Sit Amet.
-              </p>
-              <div class="user-info">
-                <img src="profile.png" alt="User Image" />
+              <div className="user-info">
+                <img src={profileImg} alt="User Image" />
                 <div>
                   <h3>Ray Robertson</h3>
                   <p>CEO Company</p>
@@ -93,14 +47,13 @@ const Reviews = () => {
 
           <div className="contact">
             <NavLink to="/contactus">
-            <button>Lets Connect</button>
+              <button>Let's Connect</button>
             </NavLink>
-                
           </div>
-
         </div>
       </div>
     </>
   );
-};  
+};
+
 export default Reviews;
