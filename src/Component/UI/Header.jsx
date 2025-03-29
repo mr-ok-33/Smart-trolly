@@ -27,7 +27,7 @@ const Header = () => {
         {/* Navigation Links */}
         <div className={`right-side ${isOpen ? "open" : ""}`}>
           <ul>
-          <li onClick={() => setIsOpen(false)}><X size={30} /></li>
+            <li className="invisible" onClick={() => setIsOpen(false)}><X size={30} /></li>
             <li><NavLink to="/platform">Platform</NavLink></li>
             <li><NavLink to="/company">Company</NavLink></li>
             <li><NavLink to="/contactus">Contact</NavLink></li>
