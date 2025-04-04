@@ -25,12 +25,11 @@ const Work = () => {
             </div>
             <div className="card1">
                 <img src={PaymentImg} alt="" />
-                <pre> <h3>3</h3><p>Instant Payment</p></pre>
-               
+                <pre><h3>3</h3><p>Instant payment on your smart cart</p></pre> 
             </div>
             <div className="card1">
                 <img src={DigitalImg} alt="" />
-                <pre>  <h3>4</h3><p> Get Your Digital Receipt</p></pre>
+                <pre><h3>4</h3><p> Get Your Digital Receipt</p></pre>
               
             </div> 
         </div>

@@ -33,7 +33,7 @@ const Header = () => {
             <li><NavLink to="/contactus">Contact</NavLink></li>
             <li>
               <NavLink to="/contactus">
-                <button>Request Demo</button>
+                <button>Book Demo</button>
               </NavLink>
             </li>
           </ul>

@@ -7,7 +7,7 @@ const Reviews = () => {
     <>
       <div className="review-container">
         <div className="heading-text">
-          <h1>Our Reviews</h1>
+          <h1>Customer Reviews</h1>
 
           <div className="review-card">
             <div className="testimonial-card">

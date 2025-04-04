@@ -9,6 +9,9 @@ body {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* width: 100%; */
   min-width: 100vw;
   overflow-x: hidden;
@@ -40,16 +43,6 @@ button:active {
 }
 
 /* Header Style */
-/* .header-container {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  max-width: 100vw;
-  z-index: 1000;
-  background-color: rgb(243, 237, 237);
-  box-shadow: 0px 4px 10px rgba(145, 145, 145, 0.1);
-} */
-
 .header-container {
   display: flex;
   justify-content: space-around;
@@ -61,17 +54,16 @@ button:active {
   z-index: 1000;
   padding: 24px;
   background-color: rgb(243, 237, 237);
-  /* background-color: red?; */
   box-shadow: 0px 4px 10px rgba(145, 145, 145, 0.1);
 }
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
-  /* background-color: red; */
+  /* background-color: purple; */
 }
 .logo-container img {
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 .left-side a {
@@ -81,8 +73,8 @@ button:active {
   margin: 0;
   font-size: 27px;
 }
-.logo-container:hover {
-  color: black;
+.logo-container{
+  color: purple;
 }
 .right-side ul {
   display: flex;
@@ -98,7 +90,7 @@ button:active {
 }
 .right-side ul li a:hover {
   text-decoration:none;
-  color: rgb(121, 61, 112);
+  color: rgb(39, 26, 37);
 }
 .menu-icon{
   display: none;
@@ -107,8 +99,17 @@ button:active {
   display: none;
 }
 /* Responsive Styles */
+@media screen and (max-width: 900px)
+{
+  .header-container{
+    /* background-color: red; */
+    flex-wrap: wrap;
+    max-width: 100vw;
+  }
+}
 @media screen and (max-width: 720px) {
   .header-container {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +117,6 @@ button:active {
     width: 100%;
     max-width: 100vw;
     /* background-color: red; */
-    flex-wrap: wrap;
   }
   .invisible{
     display: block;
@@ -208,11 +208,12 @@ button:active {
 /* Hero Section */
 .hero-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 650px;
-  gap: 10rem;
+  height: auto;
+  gap: 1rem;
   background-color: rgb(243, 237, 237);
   /* background-color: red; */
 }
@@ -234,6 +235,16 @@ button:active {
 .image img {
   height: 35rem;
   cursor: pointer;
+  object-fit: cover; /* Crops the image while maintaining aspect ratio */
+  object-position: center top; 
+}
+@media only screen and (max-width:900px) {
+  .hero-container{
+    flex-direction: row;
+    height: auto;
+    padding: 40px;
+  }
+  
 }
 @media (max-width: 720px) {
   .hero-container {
@@ -251,7 +262,7 @@ button:active {
     font-size: 16px;
   }
   .image img {
-    height: 20rem;
+    height: 30rem;
     width: 100%;
   }
 }
@@ -276,12 +287,15 @@ button:active {
   width: 100%;
   max-width: 100vw;
   position: relative;
-  left: 0;
+  left: 0px;
   display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 27rem;
-  padding: 10px;
+  height: auto;
+  padding: 20px;
+  /* padding: 0px; */
   /* margin: 20px; */
 }
 .card h1 {
@@ -296,12 +310,12 @@ button:active {
 
 .card {
   background-color: #dcf5f1;
-  height: 25rem;
+  height: 27rem;
   text-align: center;
   /* width: 22rem; */
-  margin: 10px;
+  margin: 20px;
   border-radius: 10px;
-  padding: 40px;
+  padding: 30px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: flex 0.9 ease-out;
   cursor: pointer;
@@ -309,17 +323,34 @@ button:active {
 .card:hover {
   background-color: #feb47b;
   transform: scale(1.1);
-  transition: transform 0.7s ease-out;
+  transition: transform 0.8s ease-out;
+  height: auto;
+  /* overflow: hidden; */
 }
 .card p {
   opacity: 0;
+  /* word-spacing: 20px; */
+  line-height: 1.6;
 }
 .card:hover p {
   opacity: 1;
   margin-top: 60px;
   width: auto;
+  /* line-height: 1.6; */
   /* margin-bottom: 20px; */
-  transition: opacity 0.5 ease;
+  transition: opacity 0.5s ease;
+}
+@media only screen and (max-width:900px)
+{
+  .feature-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+    max-width: 100vw;
+  }
 }
 @media (max-width: 720px) {
   .feature-container {
@@ -327,7 +358,6 @@ button:active {
     height: auto;
     padding: 10px;
   }
-
   .card {
     width: 100%;
     max-width: 80vw;
@@ -373,8 +403,11 @@ button:active {
 .work-container {
   margin-top: 5rem;
   background-color: #f9e7e7;
-  height: 650px;
+  height: 100%;
   padding: 5px;
+  width: 100%;
+  max-width: 100vw;
+  /* background-color: red; */
 }
 .work-container .heading-text h1 {
   color: rgb(220, 118, 2);
@@ -385,14 +418,19 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
+  max-width: 100vw;
+  /* flex-wrap: wrap; */
+  padding: 30px;
+  /* background-color: #090505; */
+ 
 }
 .work-card .card1 {
   background-color: #f3fffd;
   padding: 20px;
   border-radius: 15px;
   width: 100%;
-  margin: 20px 28px;
+  margin: 20px;
   box-shadow: 0 4px 10px rgb(0, 0, 0, 0.3);
 }
 .work-card .card1:hover {
@@ -406,6 +444,7 @@ button:active {
 .work-card pre {
   /* background-color: gray; */
   display: flex;
+  /* flex-wrap: wrap; */
 }
 .work-card pre h3 {
   background-color: rgb(214, 206, 206);
@@ -430,6 +469,50 @@ button:active {
   border-radius: 14px;
   text-align: center;
   margin-bottom: 17px;
+}
+@media only screen and (max-width:900px)
+{
+  .work-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .work-container .heading-text h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .work-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-card .card1 {
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .work-card .card1 img {
+    height: 200px;
+    width: 100%;
+  }
+
+  .work-card pre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-card pre h3 {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .work-card pre p {
+    font-size: 14px;
+    padding: 5%;
+  }
 }
 @media (max-width: 720px) {
   .work-container {
@@ -485,15 +568,34 @@ button:active {
   }
 }
 /* Reviews */
+.review-container{
+  /* background-color: red; */
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100vw;
+}
 .review-card {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  padding: 30px;
+  width: 100%;
+  max-width: 100vw;
+  text-align: center;
+  /* background-color: red; */
 }
 .testimonial-card {
-  height: 450px;
-  width: 400px;
+  height: 500px;
+  max-height: auto;
+  width: 350px;
+  max-width: auto;
   background: rgb(243, 237, 237);
   padding: 30px;
-  margin: 10px;
+  margin: 10px 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
@@ -517,14 +619,19 @@ button:active {
 
 .testimonial-text {
   margin: 80px 0;
-  font-size: 14px;
+  line-height: 1.6;
+  font-size: 16px;
   color: #090505;
 }
 .user-info {
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  height: auto;
   gap: 10px;
-  margin-top: 98px;
+  margin-top: 60px 40px;
+  /* background-color: red; */
 }
 .user-info img {
   width: 50px;
@@ -543,17 +650,6 @@ button:active {
   margin-top: 5px;
   color: gray;
 }
-@media screen and (max-width:390px) {
-  .review-card {
-    /* background-color: red; */
-    max-width: 100vw;
-    text-align: center;
-    padding: 5px;
-  }
-  .testimonial-card {
-    max-width: 100%;
-  }
-}
 /* Contact button Style */
 .contact {
   margin-top: 50px;
@@ -563,6 +659,16 @@ button:active {
   width: 700px;
   border-radius: 30px;
   font-size: 45px;
+}
+@media only screen and(max-width:900px)
+{
+  .review-card{
+    flex-direction: column;
+    height: auto;
+    /* flex-wrap: wrap; */
+    padding: 400px;
+    
+  }
 }
 @media (max-width: 720px) {
   .review-card {
@@ -623,7 +729,6 @@ button:active {
 @media only screen and (max-width:390px) {
   .contact button {
     max-width: 100%;
-    /* padding: 30px; */
 }
 }
   
@@ -633,6 +738,7 @@ button:active {
   background-color: rgb(214, 209, 209);
   height: 450px;
   width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -641,7 +747,7 @@ button:active {
   margin-top: 70px;
 }
 .footer-container img {
-  height: 40px;
+  height: 50px;
 }
 .footer-container .logo-section p {
   height: 100px;
@@ -691,6 +797,66 @@ button:active {
   padding: 13px;
   color: darkgreen;
   border-radius: 20px;
+}
+@media only screen and (max-width:900px)
+{
+  .footer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-container img {
+    height: 30px;
+  }
+
+  .footer-container .logo-section p {
+    width: 100%;
+    height: auto;
+    top: 20px;
+    font-size: 14px;
+  }
+
+  .text-section {
+    flex-direction: column;
+    left: 0;
+    top: 20px;
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .thirdSection p {
+    font-size: 18px;
+    left: 0;
+  }
+
+  .thirdSection .btn {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .thirdSection .btn button {
+    width: 100%;
+    font-size: 14px;
+  }
+  /* .footer-container {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .text-section{
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 70px;
+  }
+  .text-section .btn{
+    flex-direction: column;
+    flex-wrap: wrap;
+  } */
 }
 @media (max-width: 720px) {
   .footer-container {
