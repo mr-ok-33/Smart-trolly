@@ -262,7 +262,7 @@ button:active {
     font-size: 16px;
   }
   .image img {
-    height: 30rem;
+    height: 25rem;
     width: 100%;
   }
 }
@@ -283,20 +283,24 @@ button:active {
   color: rgb(38, 122, 38);
 }
 .feature-container {
-  /* background-color: rgb(243, 237, 237); */
+  /* background-color: rgb(222, 27, 27); */
   width: 100%;
   max-width: 100vw;
   position: relative;
   left: 0px;
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  /* flex-wrap: wrap; */
+  overflow-x:auto;
+  overflow-y: hidden;
   height: auto;
   padding: 20px;
   /* padding: 0px; */
-  /* margin: 20px; */
+  margin: 0px;
+  position: relative;
+  left: 0px;
 }
 .card h1 {
   margin: 20px;
@@ -311,8 +315,9 @@ button:active {
 .card {
   background-color: #dcf5f1;
   height: 27rem;
+  max-height: 100%;
   text-align: center;
-  /* width: 22rem; */
+  width: auto;
   margin: 20px;
   border-radius: 10px;
   padding: 30px 10px;
@@ -404,7 +409,7 @@ button:active {
   margin-top: 5rem;
   background-color: #f9e7e7;
   height: 100%;
-  padding: 5px;
+  padding: 5px 0px;
   width: 100%;
   max-width: 100vw;
   /* background-color: red; */
@@ -416,15 +421,29 @@ button:active {
 }
 .work-card {
   display: flex;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
   width: 100%;
   max-width: 100vw;
   /* flex-wrap: wrap; */
-  padding: 30px;
+  padding:20px;
   /* background-color: #090505; */
- 
+  overflow-x:auto;
+
 }
+.work-card .card1{
+  background-color: #f3fffd;
+  padding:10px;
+  border-radius: 15px;
+  height: 400px;
+  max-height: 100vw;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0px 20px;
+  /* box-shadow: 0 4px 10px rgb(0, 0, 0, 0.3); */
+}
+
+/* 
 .work-card .card1 {
   background-color: #f3fffd;
   padding: 20px;
@@ -432,7 +451,7 @@ button:active {
   width: 100%;
   margin: 20px;
   box-shadow: 0 4px 10px rgb(0, 0, 0, 0.3);
-}
+} */
 .work-card .card1:hover {
   /* transform:scale(none); */
   transition: background-color 0.7s ease-in;
@@ -463,8 +482,10 @@ button:active {
   font-weight: 500;
 }
 .work-card .card1 img {
-  height: 300px;
-  width: 300px;
+  height: 290px;
+  max-height: 100vw;
+  width: 100%;
+  max-width: 100vw;
   color: white;
   border-radius: 14px;
   text-align: center;
@@ -574,19 +595,22 @@ button:active {
   justify-content:  center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   max-width: 100vw;
 }
 .review-card {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   /* flex-wrap: wrap; */
   flex-direction: row;
-  padding: 30px;
+  padding: 30px 0px;
   width: 100%;
   max-width: 100vw;
   text-align: center;
-  /* background-color: red; */
+  /* background-color: rgb(115, 91, 91); */
+  overflow: auto;
+  
 }
 .testimonial-card {
   height: 500px;
@@ -745,6 +769,7 @@ button:active {
   position: relative;
   bottom: 0;
   margin-top: 70px;
+  /* overflow: auto; */
 }
 .footer-container img {
   height: 50px;
@@ -761,14 +786,17 @@ button:active {
 }
 .text-section {
   position: relative;
-  left: 120px;
+  left: 30px;
   top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* flex-wrap: wrap; */
   gap: 120px;
   font-size: 18px;
   list-style: none;
+  /* background-color: rebeccapurple; */
+  /* overflow: auto; */
 }
 .text-section ul li {
   list-style: none;
@@ -824,6 +852,7 @@ button:active {
     top: 20px;
     gap: 20px;
     font-size: 16px;
+  
   }
 
   .thirdSection p {
