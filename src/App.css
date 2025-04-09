@@ -215,6 +215,8 @@ button:active {
   height: auto;
   gap: 1rem;
   background-color: rgb(243, 237, 237);
+  overflow: hidden;
+  padding: 30px 0px;
   /* background-color: red; */
 }
 .hero-container .text h1 {
@@ -235,8 +237,12 @@ button:active {
 .image img {
   height: 35rem;
   cursor: pointer;
-  object-fit: cover; /* Crops the image while maintaining aspect ratio */
-  object-position: center top; 
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 1.5s ease; 
+}
+.image img:hover {
+  transform: scale(1.1);
 }
 @media only screen and (max-width:900px) {
   .hero-container{
@@ -244,6 +250,7 @@ button:active {
     height: auto;
     padding: 40px;
   }
+  
   
 }
 @media (max-width: 720px) {
@@ -301,6 +308,9 @@ button:active {
   margin: 0px;
   position: relative;
   left: 0px;
+}
+.feature-container::-webkit-scrollbar{
+  width: 0;
 }
 .card h1 {
   margin: 20px;
@@ -430,6 +440,9 @@ button:active {
   /* background-color: #090505; */
   overflow-x:auto;
 
+}
+.work-card::-webkit-scrollbar{
+  width: 0;
 }
 .work-card .card1{
   background-color: #f3fffd;
@@ -612,6 +625,9 @@ button:active {
   overflow: auto;
   
 }
+.review-card::-webkit-scrollbar{
+  width: 0;
+}
 .testimonial-card {
   height: 500px;
   max-height: auto;
@@ -628,9 +644,13 @@ button:active {
 .stars-date {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   font-size: 18px;
-  /* color: black; */
+  flex-wrap: wrap;
+  /* background-color: black; */
+  /* color: wheat; */
+  width: 100%;
+  line-height: 1.7;
 }
 
 .stars {
@@ -638,7 +658,7 @@ button:active {
 }
 
 .date {
-  color: rgb(23, 9, 9);
+  color: rgb(53, 44, 44);
 }
 
 .testimonial-text {
